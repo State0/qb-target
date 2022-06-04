@@ -78,8 +78,90 @@ Config.PolyZones = {
 }
 
 Config.TargetBones = {
-
+	["ATM"] = {
+		models = {"prop_atm_01", "prop_atm_02", "prop_atm_03", "prop_fleeca_atm"},
+		options = {
+							{
+				type = "command",
+				event = "atm",
+				parameters = {},
+				icon = "fab fa-cc-visa",
+				label = "USE ATM"
+			},
+		},
+		distance = 3.0
+		},
+		
+		["targetmodel2"] = {
+			models = {
+				"csb_trafficwarden"
+			},
+			options = {
+				{
+					type = "client",
+					event = "qb-firejob:garage", --event that opens the garage
+					icon = "fas fa-car",
+					label = "Garage",
+					job = "lsfd",
+				},
+			},
+			distance = 2.5,
+		},
+	
+		["lsfd"] = {
+			models = {-573669520},
+			options = {
+				{
+					type = "client",
+					event = "Toggle:LSFDDuty", -- event that toggles player duty
+					icon = "fas fa-sign-in-alt",
+					label = "On/Off Duty",
+					job = "lsfd",
+				},
+			},
+			distance = 2.5,
+		},
+	
+		["lsfdcar"] = {
+			models = {
+				-- add car names here
+				"FD2",
+				"19firetahoe",
+				"rescue1",
+				"axtladder"
+			},
+				options = {
+					{
+						type = "client",
+						event = "qb-firejob:toolsmenu",
+						icon = "fas fa-fire-extinguisher",
+						label = "FireFighter Menu",
+						job = 'lsfd'
+					},
+				},
+			distance = 2.5,
+		},
+	
+		["hydrant"] = {
+			models = {200846641, 687935120, -366155374, -97646180},
+			options = {
+				{
+					type = 'client',
+					event = 'qb-firejob:Connect',
+					icon = 'fas fa-fire-extinguisher',
+					label = 'Connect to Hydrant'
+				},
+				{
+					type = 'client',
+					event = 'qb-firejob:Disconnect',
+					icon = 'fas fa-fire-extinguisher',
+					label = 'Disconnect from Hydrant'
+				}
+			},
+			distance = 2.0
+		},
 }
+
 
 Config.TargetModels = {
 
